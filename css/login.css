@@ -1,63 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 body {
   background-color: 080823;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-nav ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 20px 25px;
-}
-nav li {
-  padding: 20px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  text-transform: capitalize;
-  font-weight: bold;
-}
-nav ul li a:hover {
-  color: rgb(170, 206, 39);
-  transition: 4s;
-}
-
-.btn {
-  background-color: white;
-  color: 080823;
-  font-weight: bold;
-  border: 2px solid transparent;
-  padding: 5px 50px;
-  margin-top: 30px;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: transform 0.4s;
-}
-.btn:hover {
-  transform: scale(1.2s);
-}
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-.text-center {
-  padding-top: 100px;
-}
-.image {
-  padding: 100px 400px;
-}
-
-.content {
-  color: white;
-  padding: 300px 0px 0px 300px;
 }
 .center {
   position: absolute;
@@ -129,4 +71,3 @@ input[type="submit"]:hover {
   background-color: F5F5F5;
   border-radius: 5px;
 }
-
