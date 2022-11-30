@@ -130,3 +130,56 @@ input[type="submit"]:hover {
   border-radius: 5px;
 }
 
+.project {
+  background-color: white;
+}
+.project-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 80px;
+  grid-gap: 1rem;
+  font-size: 1.2rem;
+}
+.card-project {
+  padding: 1rem;
+  color: 080823;
+  cursor: pointer;
+}
+.card-project img {
+}
+.card-project h3 {
+  font-size: 60px;
+}
+.project-title {
+  color: 080823;
+  font-size: 60px;
+  font-weight: 500;
+}
+.card-project {
+}
+
+.footer {
+  color: #fff;
+  background-color: #080823;
+  font-size: 30px;
+  font-weight: 400px;
+  padding: 15px 20px;
+}
+.footer ul {
+  display: flex;
+  align-items: center;
+}
+.footer ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 20px 25px 0 20px;
+  margin-left: 200px;
+  font-size: 30px;
+}
+
+.footer img {
+  height: 30px;
+}

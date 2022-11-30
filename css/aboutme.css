@@ -1,7 +1,47 @@
-
-body{
+body {
+  margin: 0;
+  padding: 0;
   background-color: 080823;
-}.aboutme {
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 20px 25px;
+}
+nav li {
+  padding: 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  color: rgb(170, 206, 39);
+  transition: 4s;
+}
+
+.btn {
+  background-color: white;
+  color: 080823;
+  font-weight: bold;
+  border: 2px solid transparent;
+  padding: 5px 50px;
+  margin-top: 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: transform 0.4s;
+}
+.btn:hover {
+  transform: scale(1.2s);
+}
+
+.aboutme {
   width: 100%;
   padding: 78px 0;
 }
@@ -48,18 +88,24 @@ button {
   padding: 13px 30px;
 }
 .footer {
-  color: white;
+  color: #080823;
+  background-color: #fff;
+  font-size: 30px;
+  font-weight: 700px;
+  padding: 15px 20px;
 }
-ul li {
+.footer ul {
+  display: flex;
+  align-items: center;
+}
+.footer ul li {
   list-style-type: none;
   display: inline-block;
   padding: 20px 25px 0 20px;
   margin-left: 200px;
-}
-li {
-  padding: 20px;
   font-size: 30px;
 }
-img {
+
+.footer img {
   height: 30px;
 }

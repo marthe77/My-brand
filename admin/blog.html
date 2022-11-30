@@ -1,0 +1,92 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin panel</title>
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <div class="side-menu">
+      <div class="brand-name"><h1>Dashboard</h1></div>
+      <ul>
+        <li>
+          <a href="index.html"
+            ><img src="../images/dashboard.png" alt="" /><span> Home</span></a
+          >
+        </li>
+        <li class="active">
+          <img src="../images/blogicon.png" alt="" /> <span>Blogs</span>
+        </li>
+        <li>
+          <a href="message.html">
+            <img src="../images/email.png" alt="" /><span> Messages</span></a
+          >
+        </li>
+        <li>
+          <a href="user.html">
+            <img src="../images/user.png" alt="" /><span> Users</span></a
+          >
+        </li>
+        <li>
+          <img src="../images/settings.png" alt="" /> <span>Setting</span>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="header">
+        <div class="nav">
+          <div class="search">
+            <input type="text" placeholder="search..." />
+            <button type="submit">
+              <img src="../images/search.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="profile">
+          <span>Marthe</span
+          ><img src="../images/user1.png" class="profile-img" alt="" />
+        </div>
+      </div>
+      <div id="content">
+        <div class="home">
+          <div class="admin-content">
+            <div class="button-group">
+              <a href="create.html" class="btn btn-big">Add blog</a>
+              <a href="index.html" class="btn btn-big">Manage blog</a>
+            </div>
+            <div class="content">
+              <h2 class="page-title">Manage blog</h2>
+              <table>
+                <thead>
+                  <th>SN</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th colspan="3">Action</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Data analysis</td>
+                    <td>Marthe</td>
+                    <td><a href="#" class="edit">edit</a></td>
+                    <td><a href="#" class="detete">detete</a></td>
+                    <td><a href="#" class="publish">publish</a></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>cloud computing</td>
+                    <td>IRAGUHA</td>
+                    <td><a href="#" class="edit">edit</a></td>
+                    <td><a href="#" class="detete">detete</a></td>
+                    <td><a href="#" class="publish">publish</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
