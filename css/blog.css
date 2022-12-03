@@ -100,7 +100,7 @@ nav ul li a:hover {
   color: blue;
 }
 .blog-text .blog-title {
-  font-weight: 400;
+  font-weight:400;
   font-size: 30px;
   color: 080823;
   transition: all ease 0.3s;
@@ -113,6 +113,7 @@ nav ul li a:hover {
 .blog-text a {
   color: 080823;
 }
+
 .blog-text a:hover {
   color: red;
   transition: all ease 0.3s;

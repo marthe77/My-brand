@@ -5,21 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div class="center">
       <h1>Login now</h1>
-      <form action="post">
+      <form method="post">
         <div class="txt_field">
-          <input type="text" class="field" required placeholder="username" />
+          <input
+            type="text"
+            class="field"
+            id="loginEmail"
+            required
+            placeholder="Email"
+          />
+          <span id="loginEmailError"></span>
         </div>
         <div class="txt_field">
-          <input type="password" class="field" required placeholder="password " />
+          <input
+            type="password"
+            class="field"
+            id="loginPassword"
+            required
+            placeholder="password "
+          />
+          <span id="loginPasswordError"></span>
         </div>
         <div class="pass">Forgot a password?</div>
+        <p id="errorMessage" hidden></p>
         <input type="submit" value="Login" />
-        <div class="signup_link">Not a member? <a href="signup.html">Signup</a></div>
+        <div class="signup_link">
+          Not a member? <a href="signup.html">Signup</a>
+        </div>
       </form>
+      <div id="show"></div>
     </div>
+
+    <script src="script/script.js"></script>
   </body>
 </html>

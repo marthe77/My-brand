@@ -12,15 +12,23 @@
     </div>
     <div class="center">
       <h1>Signup</h1>
-      <form action="post">
+      <form action="" id="signupForm">
         <div class="txt_field">
-          <input type="text" required placeholder="Names" />
+          <input type="text" required placeholder="Names" id="signupNames" />
+          <span id="nameError"></span>
         </div>
         <div class="txt_field">
-          <input type="email" required placeholder="Email" />
+          <input type="email" required placeholder="Email" id="signupEmail" />
+          <span id="emailError"></span>
         </div>
         <div class="txt_field">
-          <input type="password" required placeholder="password " />
+          <input
+            type="password"
+            required
+            placeholder="password "
+            id="signupPassword"
+          />
+          <span id="passwordError"></span>
         </div>
         <input type="submit" value="Create account" />
         <div class="signup_link">
@@ -36,5 +44,6 @@
         <li><img src="images/linkedin.png" alt="" /> Iraguha marthe</li>
       </ul>
     </footer>
+    <script src="script/script.js"></script>
   </body>
 </html>

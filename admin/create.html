@@ -8,71 +8,67 @@
   </head>
   <body>
     <div class="side-menu">
-    <div class="brand-name"><h1>Dashboard</h1></div>
-    <ul>
-      <li>
-        <a href="index.html"
-          ><img src="../images/dashboard.png" alt="" /><span> Home</span></a
-        >
-      </li>
-      <li class="active">
-        <img src="../images/blogicon.png" alt="" /> <span>Blogs</span>
-      </li>
-      <li>
-        <a href="message.html">
-          <img src="../images/email.png" alt="" /><span> Messages</span></a
-        >
-      </li>
-      <li>
-        <a href="user.html">
-          <img src="../images/user.png" alt="" /><span> Users</span></a
-        >
-      </li>
-      <li>
-        <img src="../images/settings.png" alt="" /> <span>Setting</span>
-      </li>
-    </ul>
-  </div>
-  <div class="container">
-    <div class="header">
-      <div class="nav">
-        <div class="search">
-          <input type="text" placeholder="search..." />
-          <button type="submit">
-            <img src="../images/search.png" alt="" />
-          </button>
+      <div class="brand-name"><h1>Dashboard</h1></div>
+      <ul>
+        <li>
+          <a href="index.html"
+            ><img src="../images/dashboard.png" alt="" /><span> Home</span></a
+          >
+        </li>
+        <li class="active">
+          <img src="../images/blogicon.png" alt="" /> <span>Blogs</span>
+        </li>
+        <li>
+          <a href="message.html">
+            <img src="../images/email.png" alt="" /><span> Messages</span></a
+          >
+        </li>
+        <li>
+          <a href="user.html">
+            <img src="../images/user.png" alt="" /><span> Users</span></a
+          >
+        </li>
+        <li>
+          <img src="../images/settings.png" alt="" /> <span>Setting</span>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="header">
+        <div class="nav">
+          <div class="search">
+            <input type="text" placeholder="search..." />
+            <button type="submit">
+              <img src="../images/search.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="profile">
+          <span>Marthe</span
+          ><img src="../images/user1.png" class="profile-img" alt="" />
         </div>
       </div>
-      <div class="profile">
-        <span>Marthe</span
-        ><img src="../images/user1.png" class="profile-img" alt="" />
-      </div>
-    </div>
-    <div class="admin-content">
-      <div class="button-group">
-        <a href="create.thml" class="btn btn-big">Add blog</a>
-        <a href="index.html" class="btn btn-big">Manage blog</a>
-      </div>
-      <div class="create-blog">
-        <h2 class="page-title">add blog</h2>
-        <form action="create.html " method="post">
-          <div>
-            <label> Title</label>
-            <input type="text" name="title" class="text-input" />
-          </div>
-          <div>
-            <label> Body</label>
-            <textarea name="body" id="body"></textarea>
-          </div>
-          <div>
-            <label for="">Topic</label>
-            <select name="topic" class="text-input">
-              <option value="web development"></option>
-              <option value="life lessons"></option>
-            </select>
-          </div>
-          <div><button type="submit" class="btn btn-big">Add blog</button></div>
-        </form>
+      <div class="admin-content">
+        <div class="create-blog">
+          <h2 class="page-title">add blog</h2>
+          <form method="post" id="saveBlog">
+            <div>
+              <label> Title</label>
+              <input type="text" class="text-input" id="titleInput" />
+            </div>
+            <div>
+              <label> Content</label>
+              <textarea id="contentInput"></textarea>
+            </div>
+            <div>
+              <label for="">Image</label>
+              <input type="file" accept=".jpeg,.png,.jpg,.tiff,.webp" />
+            </div>
+            <div>
+              <button type="submit" class="btn btn-big">Add blog</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </body>

@@ -1,5 +1,6 @@
 body {
-  background-color: 080823;
+  background-color: #080823;
+  color: #fff;
 }
 .center {
   position: absolute;
@@ -70,4 +71,11 @@ input[type="submit"]:hover {
   margin-bottom: 22px;
   background-color: F5F5F5;
   border-radius: 5px;
+}
+.txt_field span {
+  color: red;
+  font-size: 17px;
+  font-style: italic;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }

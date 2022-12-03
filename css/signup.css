@@ -41,6 +41,7 @@ form .txt_field {
   padding: 0 5px;
   height: 40px;
   font-size: 15px;
+  outline: none;
 }
 .pass {
   margin: -5px 0 20px 5px;
@@ -108,4 +109,11 @@ input[type="submit"]:hover {
 
 .footer img {
   height: 30px;
+}
+.txt_field span {
+  color: red;
+  font-size: 17px;
+  font-style: italic;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
