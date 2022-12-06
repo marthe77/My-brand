@@ -1,0 +1,112 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no"
+    />
+    <title>my Blog</title>
+    <link rel="stylesheet" href="css/blog.css" />
+  </head>
+  <body>
+    <div class="hello">
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="aboutme.html">ABOUT ME</a></li>
+          <li><a href="skills.html">SKILLS</a></li>
+          <li><a href="blogs.html">BLOGS</a></li>
+          <li><a href="contactMe.html">CONTACT ME</a></li>
+        </ul>
+        <li class="btn" id="loginLogout"><a href="login.html">LOGIN</a></li>
+      </nav>
+    </div>
+    <section id="blog">
+      <div class="blog_header">
+        <h3>My blog Detail</h3>
+      </div>
+      <!-- <div class="blog-container" id="blogDetailContainer"></div> -->
+    </section>
+    <div class="blog-details" id="blogDetailContainer">
+      <div class="blogdetails-img">
+        <img src="images/blog3.jpg" alt="blog" />
+        <div class="comment-like">
+          <span>Like</span>
+          <span>
+            <textarea placeholder="comments"></textarea>
+            <input type="button" class="btnComment" value="Comments"
+          /></span>
+        </div>
+      </div>
+      <div class="blogdetail-text">
+        <span>18/novermber/2022 </span>
+        <a href="#" class="blogdetail-title">Blog title</a>
+        <p>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of
+          letters, as opposed to using 'Content here, content here', making it
+          look like readable English.
+        </p>
+      </div>
+      <div class="userComment"><p>Comments</p></div>
+    </div>
+    <footer class="footer">
+      <ul>
+        <li><img src="images/whatsaap.png" alt="" /> 0781269242</li>
+        <li><img src="images/email.png" alt="" /> iraguhamarthe@gmail.com</li>
+        <li><img src="images/github.png" alt="" /> Marthe77</li>
+        <li><img src="images/linkedin.png" alt="" /> Iraguha marthe</li>
+      </ul>
+    </footer>
+    <script>
+      const handleLogout = () => {
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
+      };
+      window.onload = () => {
+        //get blogs
+        let hash = window.location.hash;
+        let blogId = hash.replaceAll("#blog", "");
+        const blogContainer = document.getElementById("blogContainer");
+        if (localStorage.getItem("blogs")) {
+          const blogs = JSON.parse(localStorage.getItem("blogs"));
+
+          if (blogs[blogId]) {
+            const content = `<div class="blogdetails-img">
+        <img src="${blogs[blogId].image}" alt="blog" />
+        <div class="comment-like">
+          <span>Like</span>
+          <span>
+            <textarea placeholder="comments"></textarea>
+            <input type="button" class="btnComment" value="Comments"
+          /></span>
+        </div>
+      </div>
+      <div class="blogdetail-text">
+        <span>${blogs[blogId].postDate} </span>
+        <a href="#" class="blogdetail-title">${blogs[blogId].title}</a>
+        <p>
+          ${blogs[blogId].description}
+        </p>
+      </div>
+      <div class="userComment"><p>Comments</p></div>`;
+            blogContainer = content;
+          } else {
+            blogContainer.innerHTML = '<p style="color:white">Invalid link</p>';
+          }
+        } else {
+          blogContainer.innerHTML = '<p style="color:white">No blogs found</p>';
+        } 
+
+        if (localStorage.loggedInUser) {
+          document.getElementById("loginLogout").innerHTML = `Logout`;
+          document
+            .getElementById("loginLogout")
+            .setAttribute("onclick", "handleLogout()");
+        }
+      };
+    </script>
+  </body>
+</html>

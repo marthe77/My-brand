@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>admin panel</title>
     <link rel="stylesheet" href="css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="side-menu">
@@ -31,6 +35,7 @@
         <li>
           <img src="../images/settings.png" alt="" /> <span>Setting</span>
         </li>
+        <li onclick="handleLogout()"><span>Logout</span></li>
       </ul>
     </div>
     <div class="container">
@@ -59,27 +64,28 @@
               <h2 class="page-title">Manage blog</h2>
               <table>
                 <thead>
-                  <th>SN</th>
+                  <th>image</th>
                   <th>Title</th>
-                  <th>Author</th>
+                  <th>description</th>
                   <th colspan="3">Action</th>
                 </thead>
-                <tbody>
+                <tbody id="tableBody">
                   <tr>
-                    <td>1</td>
+                    <td>
+                      <span
+                        ><img
+                          class="blog-image"
+                          src="../images/marthe.png"
+                          alt="blog image"
+                      /></span>
+                    </td>
                     <td>Data analysis</td>
                     <td>Marthe</td>
-                    <td><a href="#" class="edit">edit</a></td>
-                    <td><a href="#" class="detete">detete</a></td>
-                    <td><a href="#" class="publish">publish</a></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>cloud computing</td>
-                    <td>IRAGUHA</td>
-                    <td><a href="#" class="edit">edit</a></td>
-                    <td><a href="#" class="detete">detete</a></td>
-                    <td><a href="#" class="publish">publish</a></td>
+                    <td>
+                      <span title="edit"><i class="fa fa-pencil"></i></span>
+                      <span title="view"><i class="fa fa-eye"></i></span>
+                      <span title="Delete"><i class="fa fa-trash"></i></span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -88,5 +94,6 @@
         </div>
       </div>
     </div>
+    <script src="js/js.js"></script>
   </body>
 </html>

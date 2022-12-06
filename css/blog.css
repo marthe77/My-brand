@@ -10,7 +10,13 @@ nav {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  padding: 20px 25px;
+  padding: 5px 25px;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
 }
 nav li {
   padding: 20px;
@@ -100,7 +106,7 @@ nav ul li a:hover {
   color: blue;
 }
 .blog-text .blog-title {
-  font-weight:400;
+  font-weight: 400;
   font-size: 30px;
   color: 080823;
   transition: all ease 0.3s;

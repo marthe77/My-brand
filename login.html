@@ -10,7 +10,7 @@
   <body>
     <div class="center">
       <h1>Login now</h1>
-      <form method="post">
+      <form method="post" id="loginForm">
         <div class="txt_field">
           <input
             type="text"
@@ -42,5 +42,84 @@
     </div>
 
     <script src="script/script.js"></script>
+    <script>
+      window.onload = () => {
+        if (localStorage.getItem("loggedInUser")) {
+          const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+          if (loggedInUser.username == "") {
+            localStorage.removeItem("loggedInUser");
+          } else {
+            window.location = "index.html";
+          }
+        }
+      };
+
+      const checkUserLoginStatus = () => {
+        if (localStorage.loggedInUser) {
+          if (localStorage.loggedInUser.username.trim() != "") {
+            console.log(localStorage.loggedInUser);
+            // alert('user already logged in'); // removed temporary
+          } else {
+            //username can not be empty
+            //so, clear everything for our loggedInUser obj
+            localStorage.removeItem("loggedInUser");
+          }
+        } else {
+          console.log("No user who is logged");
+        }
+      };
+
+      document.getElementById("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const username = document.getElementById("loginEmail");
+        const password = document.getElementById("loginPassword");
+        const oldSignedUpUsers = JSON.parse(
+          localStorage.getItem("loggedInUser")
+        );
+        if (oldSignedUpUsers) {
+          alert(
+            "Already logged in as " +
+              oldSignedUpUsers.username +
+              "\nYou must logout inorder to continue"
+          );
+        } else if (username.value.trim() != "" && password.value.trim() != "") {
+          const signedUpUsers = JSON.parse(
+            localStorage.getItem("signedUpUsers")
+          );
+          let found = false;
+          for (let i = 0; i < signedUpUsers.length; i++) {
+            if (
+              signedUpUsers[i].email == username.value &&
+              signedUpUsers[i].password == password.value
+            ) {
+              found = true;
+              break;
+            }
+          }
+
+          if (found && username.value == "iraguhamarthe@gmail.com") {
+            const loggedInUser = {
+              username: username.value,
+              password: password.value,
+            };
+            localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+            alert("logged in successfull");
+            window.location = "admin/index.html";
+          } else if (found) {
+            const loggedInUser = {
+              username: username.value,
+              password: password.value,
+            };
+            localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+            alert("logged in successfull");
+            window.location = "index.html";
+          } else {
+            alert("Invalid username or password");
+          }
+        } else {
+          username.focus();
+        }
+      });
+    </script>
   </body>
 </html>

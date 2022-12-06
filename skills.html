@@ -16,7 +16,7 @@
           <li><a href="blogs.html">BLOGS</a></li>
           <li><a href="contactMe.html">CONTACT ME</a></li>
         </ul>
-        <li><a href="login.html" class="btn">LOGIN</a></li>
+        <li class="btn" id="loginLogout"><a href="login.html">LOGIN</a></li>
       </nav>
     </div>
     <div class="inner">
@@ -94,5 +94,22 @@
         <li><img src="images/linkedin.png" alt="" /> Iraguha marthe</li>
       </ul>
     </footer>
+    <script>
+      const handleLogout = () => {
+        if (confirm("Are you sure to logout?")) {
+          localStorage.removeItem("loggedInUser");
+          window.location.reload();
+        }
+      };
+      window.onload = () => {
+        if (localStorage.loggedInUser) {
+          document.getElementById("loginLogout").innerHTML = `Logout`;
+          document
+            .getElementById("loginLogout")
+            .setAttribute("onclick", "handleLogout()");
+          // document.querySelector('.hide').style.display = `none`;
+        }
+      };
+    </script>
   </body>
 </html>

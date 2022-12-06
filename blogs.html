@@ -19,23 +19,21 @@
           <li><a href="blogs.html">BLOGS</a></li>
           <li><a href="contactMe.html">CONTACT ME</a></li>
         </ul>
-        <li><a href="login.html" class="btn">LOGIN</a></li>
+        <li class="btn" id="loginLogout"><a href="login.html">LOGIN</a></li>
       </nav>
     </div>
     <section id="blog">
       <div class="blog_header">
         <h3>My blog</h3>
       </div>
-      <div class="blog-container">
+      <div class="blog-container" id="blogContainer">
         <div class="blog-box">
           <div class="blog-img">
             <img src="images/blog1.jpg" alt="blog" />
           </div>
           <div class="blog-text">
             <span>18/novermber/2022</span>
-            <a href="#" class="blog-title"
-              >Blog title</a
-            >
+            <a href="#" class="blog-title">Blog title</a>
             <p>
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
@@ -58,9 +56,7 @@
           </div>
           <div class="blog-text">
             <span>18/novermber/2022</span>
-            <a href="#" class="blog-title"
-              >Blog title</a
-            >
+            <a href="#" class="blog-title">Blog title</a>
             <p>
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
@@ -84,9 +80,7 @@
           </div>
           <div class="blog-text">
             <span>18/novermber/2022 </span>
-            <a href="#" class="blog-title"
-              >Blog title</a
-            >
+            <a href="#" class="blog-title">Blog title</a>
             <p>
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
@@ -109,9 +103,7 @@
           </div>
           <div class="blog-text">
             <span>18/novermber/2022</span>
-            <a href="#" class="blog-title"
-              >Blog title</a
-            >
+            <a href="#" class="blog-title">Blog title</a>
             <p>
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
@@ -138,5 +130,48 @@
         <li><img src="images/linkedin.png" alt="" /> Iraguha marthe</li>
       </ul>
     </footer>
+    
+    <script>
+      const handleLogout = () => {
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
+      };
+      window.onload = () => {
+        //get blogs
+        const blogContainer = document.getElementById("blogContainer");
+        if (localStorage.getItem("blogs")) {
+          const blogs = JSON.parse(localStorage.getItem("blogs"));
+          blogContainer.innerHTML = "";
+          for (let i = 0; i < blogs.length; i++) {
+            const post = `
+              <div class="blog-box">
+                <div class="blog-img">
+                  <img src="${blogs[i].image}" alt="Blog image" />
+                </div>
+                <div class="blog-text">
+                  <span>${blogs[i].postDate}</span>
+                  <a href="#" class="blog-title">${blogs[i].title}</a>
+                  <p>${blogs[i].description}<a href="blog-details.html#blog${i}">Readmore</a></p>
+                  <div class="comment-like">
+                    <span>3 Like</span>
+                    <span style="border-bottom: 1px dotted rgb(120, 119, 119)">Comments</span>
+                  </div>
+                </div>
+              </div>`;
+            blogContainer.innerHTML = blogContainer.innerHTML + post;
+          }
+        } else {
+          blogContainer.innerHTML =
+            "<p style='color:white'>No blog posts found</p>";
+        }
+
+        if (localStorage.loggedInUser) {
+          document.getElementById("loginLogout").innerHTML = `Logout`;
+          document
+            .getElementById("loginLogout")
+            .setAttribute("onclick", "handleLogout()");
+        }
+      };
+    </script>
   </body>
 </html>

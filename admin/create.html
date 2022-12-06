@@ -31,6 +31,7 @@
         <li>
           <img src="../images/settings.png" alt="" /> <span>Setting</span>
         </li>
+        <li onclick="handleLogout()"><span>Logout</span></li>
       </ul>
     </div>
     <div class="container">
@@ -62,7 +63,8 @@
             </div>
             <div>
               <label for="">Image</label>
-              <input type="file" accept=".jpeg,.png,.jpg,.tiff,.webp" />
+              <!-- <input type="file" accept=".jpeg,.png,.jpg,.tiff,.webp" /> -->
+              <input type="text" id="imageInput" />
             </div>
             <div>
               <button type="submit" class="btn btn-big">Add blog</button>
@@ -71,5 +73,6 @@
         </div>
       </div>
     </div>
+    <script src="js/js.js"></script>
   </body>
 </html>

@@ -9,7 +9,13 @@ nav {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  padding: 20px 25px;
+  padding: 5px 25px;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
 }
 nav li {
   padding: 20px;
@@ -81,19 +87,6 @@ h2 {
 }
 .area {
   min-height: 200px;
-}
-.btn {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  font-size: 1.1rem;
-  background-color: 080823;
-  color: white;
-  cursor: pointer;
-  outline: none;
-  border-radius: 5px;
-}
-.btn:hover {
-  background-color: brown;
 }
 
 .footer {

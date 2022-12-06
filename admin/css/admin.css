@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+ul {
+  position: relative;
+}
 
 li {
   list-style: none;
@@ -28,6 +31,21 @@ li {
   align-items: center;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
+}
+.side-menu li:last-child {
+  position: absolute;
+  top: 700px;
+  left: 20px;
+  text-align: center;
+  border: none;
+  font-weight: 800;
+  border: 1px solid #ddd;
+  font-size: 30px;
+  width: 50%;
+}
+.side-menu li:last-child span {
+  width: 100%;
+  margin: 0;
 }
 .side-menu li:hover {
   background-color: aqua;
@@ -200,13 +218,13 @@ li a {
   margin-bottom: 60px;
 }
 table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   font-size: 1.1rem;
 }
 th,
 td {
-  padding: 15px;
+  padding: 5px;
   text-align: left;
 }
 .content table tbody tr td a {
@@ -235,6 +253,21 @@ td {
 .text-input {
   padding: 10px 100px;
 }
-#body{
-   
+.blog-image {
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+.fa {
+  font-size: 25px !important;
+  background-color: bisque;
+}
+.icons {
+  display: flex;
+}
+.fa-pencil,
+.fa-eye,
+.fa-trash {
+  margin: 0;
 }
